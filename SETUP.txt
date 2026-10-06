@@ -1,0 +1,19 @@
+conda init bash
+source ~/.bashrc
+
+## Check venv
+conda env list
+conda create -n FFF-climate python=3.12 -y
+conda activate FFF-climate
+
+## Requirements
+pip install -r requirements-gpu.txt
+
+(instead of 
+pip install vllm==0.8.5.post1 -e ../DDR_package
+pip install "transformers<4.54.0" )
+
+## Install the Kernel
+pip install ipykernel
+python -m ipykernel install --user --name FFF-climate
+

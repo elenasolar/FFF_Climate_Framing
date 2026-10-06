@@ -1,0 +1,10 @@
+{
+    "climate_change": {
+        "definition": "Rahmt den Klimawandel primär als wissenschaftliches, ökologisches oder technokratisches Problem -- über Emissionen, Ökosysteme oder politische Zielwerte -- ohne Bezug zu sozialer Ungleichheit oder Gerechtigkeit.",
+        "cue": "Enthält häufig wissenschaftlich-technisches Vokabular, Emissionszahlen, Temperaturziele oder ökologische Rahmung (z. B. „1,5 Grad“, „CO2“, „Ökosystem“) ohne Bezug darauf, wer ungleich betroffen ist oder wer über die Emissionen hinaus Verantwortung trägt."
+    },
+    "climate_justice": {
+        "definition": "Rahmt den Klimawandel als Frage von Gerechtigkeit, Rechten oder Verteilung, mit Bezug darauf, wer verantwortlich ist, wer am stärksten betroffen ist oder wem was geschuldet wird.",
+        "cue": "Enthält häufig Gerechtigkeits-/Rechtevokabular, Bezüge zu Ungleichheit, Verantwortung oder Verteilungsgerechtigkeit (z. B. „Klimagerechtigkeit“, „Verantwortung“, diejenigen, die am wenigsten verursacht haben, leiden am meisten)."
+    }
+}

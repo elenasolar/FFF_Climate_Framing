@@ -1,0 +1,26 @@
+{
+    "blame_attribution": {
+    "definition": "Benennt konkrete Akteur:innen, Institutionen oder Systeme, die für das Problem verantwortlich gemacht werden.",
+    "cue": "Enthält häufig Nennungen von Verantwortlichen (Konzerne, Parteien, Regierung, fossile Industrie) oder Schuldzuweisungen (z. B. „schuld ist...“, „verursacht durch...“)."
+    },
+    "problem_identification": {
+        "definition": "Benennt oder beschreibt ein konkretes Problem, seine Existenz, seinen Umfang oder seine Folgen, ohne notwendigerweise eine verantwortliche Partei zu benennen.",
+        "cue": "Enthält häufig Problembeschreibungen, Fakten/Belege zur Krise oder Folgenschilderungen (z. B. „die Temperaturen steigen“, „Extremwetter nimmt zu“), auch ohne explizite Schuldzuweisung."
+    },
+    "solutions": {
+        "definition": "Schlägt eine konkrete Lösung, politische Maßnahme oder Forderung zur Bewältigung des Problems vor.",
+        "cue": "Enthält häufig konkrete politische Forderungen oder Maßnahmenvorschläge (z. B. „Kohleausstieg jetzt“, „9-Euro-Ticket“, Gesetzesvorhaben)."
+    },
+    "tactics": {
+        "definition": "Beschreibt die strategischen oder organisatorischen Mittel, mit denen die Lösung erreicht werden soll: wie und durch wen gehandelt wird, nicht nur was erreicht werden soll.",
+        "cue": "Enthält häufig Aktionsformen, Organisationsmittel oder strategische Sprache (z. B. „Streik“, „Petition“, „Bündnis mit...“, Demoformate, Kampagnenaufrufe)."
+    },
+    "rationale": {
+        "definition": "Liefert eine Begründung dafür, warum gehandelt werden muss: Dringlichkeit, moralische Verpflichtung oder Konsequenzen des Nicht-Handelns.",
+        "cue": "Enthält häufig Dringlichkeits- oder Moralsprache (z. B. „es bleibt keine Zeit mehr“, „wir haben eine Verantwortung“, „sonst ist es zu spät“)."
+    },
+    "call_to_action": {
+        "definition": "Fordert die Leser:innen direkt zur Teilnahme oder zum Handeln auf.",
+        "cue": "Enthält häufig direkte Handlungsaufforderungen oder Imperative (z. B. „Kommt alle“, „Seid dabei“, „Meldet euch an“, „Macht mit“)."
+    }
+}

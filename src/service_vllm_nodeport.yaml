@@ -1,0 +1,27 @@
+# Adapted from Stephens example for pairing with deployment_vllm_qwen.yaml.
+# selector.app changed from "tgillm-server" (example deployment) to
+# "qwen-vllm-server" (this deployment's pod-template label) -- a Service only
+# routes to pods whose labels match `selector` exactly, in the SAME namespace.
+#
+# THIS FILE STAYS A PLACEHOLDER-ONLY TEMPLATE -- real values (namespace,
+# nodePort) go only in the gitignored service_vllm_nodeport.local.yaml copy.
+# See deployment_vllm_qwen.yaml's matching note.
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: qwen-vllm-service-nodeport   # renamed from tgillm-... for clarity; not functionally required
+  namespace: user-first-last   # <<< FILL IN -- MUST be identical to deployment_vllm_qwen.yaml's
+                                #     namespace (see the note there), or this Service finds no pods
+spec:
+  selector:
+    app: qwen-vllm-server      # <<< matches deployment_vllm_qwen.yaml's spec.template.metadata.labels.app
+  type: NodePort
+  ports:
+    - name: apivlmm
+      protocol: TCP
+      port: 8000            # the Service's own port (reachable from inside the cluster)
+      targetPort: 8000       # forwards to the pod's containerPort -- matches deployment_vllm_qwen.yaml
+      nodePort: xxxx         # <<< you're filling this in -- must be in the cluster's allowed NodePort
+                             #     range (32100-32767)
+

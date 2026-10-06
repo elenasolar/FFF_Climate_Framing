@@ -1,0 +1,19 @@
+{
+  "oben_unten": {
+    "definition": "Arena der Ungleichheitskonflikte: oben vs. unten (sozioökonomische Verteilung). Erfasst frame extension: Ungleichheiten entlang dieser Dimension -- wirtschaftliche Ungleichheiten, Vermögen und Einkommen und Politiken zu deren Ausgleich bzw. Umverteilung -- werden im Beitrag erwähnt oder thematisiert, auch wenn Klima- oder Transformationspolitik selbst nicht explizit in diesen Begriffen gerahmt wird.",
+    "cue": "Enthält häufig klassen- oder schichtbezogene Sprache („Reiche“, „Konzerne“, „Milliardäre“, „Arme“, „einkommensschwache Haushalte“) oder rahmt Klimapolitik explizit als Verteilungsfrage (z. B. soziale Abfederung, Klimageld, Belastung unterer Einkommen, Subventionen für Wohlhabende)."
+  },
+  "innen_aussen": {
+    "definition": "Arena der Ungleichheitskonflikte: innen vs. außen (Zugehörigkeit und Migration). Erfasst frame extension: Ungleichheiten entlang dieser Dimension -- welche Länder verursachen Emissionen und welche Länder tragen die Folgen, wem wird Hilfe angeboten, wer erfährt Zugang zur Gemeinschaft und damit Solidarität -- werden im Beitrag erwähnt oder thematisiert, auch wenn der Klimawandel selbst nicht explizit in diesen Begriffen gerahmt wird.",
+    "cue": "Enthält häufig Sprache zu Nationalstaaten und Zugehörigkeit („Globaler Norden/Süden“, „reiche Länder vs. arme Länder“, „Klimaflucht“, „Migrant:innen“, „Asyl“), verknüpft Klimagerechtigkeit mit Fragen von Staatsbürgerschaft und ungleichen Rechten auf Schutz und Teilhabe, oder unterscheidet zwischen unterschiedlich legitimierten Fluchtgründen (z. B. Krieg vs. Armut)."
+  },
+  "wir_sie": {
+    "definition": "Arena der Ungleichheitskonflikte: wir vs. sie (Anerkennung und Identität). Erfasst frame extension: Ungleichheiten entlang dieser Dimension -- Konflikte um Identität, Gender und Rassismus, Teilhabe und Repräsentation marginalisierter Gruppen, gesellschaftliche Anerkennung diverser Identitäten und Lebensformen mit Bezug auf Sexualität, Geschlecht oder Ethnizität -- werden im Beitrag erwähnt oder thematisiert, auch wenn Klima- oder Umweltpolitik selbst nicht explizit in diesen Begriffen gerahmt wird.",
+    "cue": "Enthält häufig Sprache zu Anerkennung, Diskriminierung und Identität („marginalisierte Gruppen“, „BIPoC“, „queer“, „feministisch“, „Rassismus“, „Sexismus“) oder stellt Klimakämpfe als Teil größerer Kämpfe um Gleichwertigkeit, Sichtbarkeit und Schutz vor Herabsetzung dar."
+  },
+  "heute_morgen": {
+    "definition": "Arena der Ungleichheitskonflikte: heute vs. morgen (Klimaschutz). Ungleichheiten entlang dieser Dimension - generationelle konflikte um Verursacher und Leidtragende, Verantwortung und Interesse. Wer emittiert und profitiert heute, wer trägt die Kosten der Transformation, und wer erbt morgen die Folgen?",
+    "cue": "Enthält häufig generationenübergreifende Sprache („unsere Kinder“, „Zukunft stehlen“, „unsere Zukunft“)."
+
+  }
+}

@@ -1,0 +1,7 @@
+window,n_posts,n_topics,outlier_pct,top_entity
+baseline,982,16,29.496402877697843,FridaysForFuture
+covid,908,18,29.621380846325167,FridaysForFuture
+ukraine_energy,399,14,27.204030226700255,Lützerath
+cost_of_living,459,15,34.93449781659388,FridaysForFuture
+gaza,359,13,21.72701949860724,Hamburg
+politics,155,5,50.32258064516129,Berlin

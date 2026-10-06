@@ -1,0 +1,14 @@
+{
+    "diagnostic": {
+        "definition": "Benennt ein Problem, eine Bedrohung oder ein Unrecht und schreibt dessen Ursache oder Verantwortung bestimmten Akteur:innen, Systemen oder Institutionen zu.",
+        "cue": "Nennt häufig Verantwortliche, verweist auf Schäden oder Folgen oder verwendet Krisen-/Notstandssprache (z. B. „Klimakrise“, „Regierung versagt“, Nennung von Konzernen, Parteien oder fossilen Interessen)."
+    },
+    "prognostic": {
+        "definition": "Schlägt eine Lösung, politische Forderung oder Strategie zur Bewältigung des diagnostizierten Problems vor, einschließlich dessen, was von wem getan werden soll.",
+        "cue": "Enthält häufig konkrete Forderungen, politische Ansprüche oder strategische/taktische Sprache (z. B. „Kohleausstieg jetzt“, „wir fordern“, konkrete Gesetzesvorhaben, Transformationspläne oder Handlungsschritte)."
+    },
+    "motivational": {
+        "definition": "Liefert eine Begründung oder einen Appell zur Beteiligung an kollektivem Handeln -- Dringlichkeit, moralische Verpflichtung oder eine Einladung zur Teilnahme -- anstatt nur zu beschreiben oder zu erklären.",
+        "cue": "Enthält häufig direkte Handlungsaufforderungen, Aufrufe zur Teilnahme, Dringlichkeitsmarker oder Sprache kollektiver Identität (z. B. „Kommt alle“, „Jetzt handeln“, „Seid dabei“, Imperative)."
+    }
+}

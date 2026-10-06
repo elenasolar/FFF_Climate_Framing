@@ -1,0 +1,107 @@
+# Deployment for Qwen/Qwen3.8-27B-FP8, adapted Steohens provided vLLM
+# example manifest. 
+#
+# Paired with service_vllm_nodeport.yaml -- the Service's `selector.app`
+# must match this Deployment's pod-template label (`app: qwen-vllm-server`)
+# exactly, which it does.
+#
+# Fields marked <<< FILL IN depend on facts about your specific cluster
+#
+# THIS FILE STAYS A PLACEHOLDER-ONLY TEMPLATE. Real cluster-specific values
+# (namespace, tolerations, nodeSelector, hostPath usernames) go ONLY in the
+# gitignored deployment_vllm_qwen.local.yaml copy -- filled in and applied
+# (`kubectl apply -f deployment_vllm_qwen.local.yaml`).
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qwen-vllm-pod          # distinct from the admin's "tgillm-pod" so both can run at once
+  namespace: user-first-last   # <<< FILL IN -- from the admin's NodePort sample; looks like a
+                                #     "user-<your first name>-<your last name>" template, not a
+                                #     literal value -- confirm with your admin if unsure. Must be
+                                #     IDENTICAL to service_vllm_nodeport.yaml's namespace, or the
+                                #     Service won't find this Deployment's pods at all.
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: qwen-vllm-server
+  template:
+    metadata:
+      labels:
+        app: qwen-vllm-server
+        hf.co/model: Qwen--Qwen3.8-27B-FP8
+        hf.co/task: text-generation
+    spec:
+      containers:
+        - name: qwen-vllm-container
+          image: vllm/vllm-openai:v0.19.1     
+          args:
+            - --model
+            - "Qwen/Qwen3.8-27B-FP8"
+            - --max-model-len
+            - "16384"                # tokens limit; raise if needed
+            - --gpu-memory-utilization
+            - "0.95"
+            - --enable-prefix-caching   # reuse the KV cache of identical prompt prefixes (the
+                                        # persona block shared by all of an agent's calls) --
+                                        # required for the cheap per-block/per-item survey designs
+                                        # (run_panel_task.py --granularity). Verify after restart:
+                                        # curl <base>/metrics | grep cache_config_info
+                                        # must show enable_prefix_caching="True". If vLLM logs
+                                        # that this model architecture doesn't support it, remove.
+            # --tensor-parallel-size
+            # - "2"                  # <<< only add this back (and request 2 GPUs below) if ONE gpu
+                                      #     on your cluster has less than ~30GB memory -- check first
+            - --api-key
+            - "$(API_KEY)"
+          env:
+            - name: API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: qwen-vllm-api-key           # created by Elena, shared with Peer
+                  key: API_KEY
+            # - name: HF_TOKEN                       # only add this if Qwen/Qwen3.8-27B-FP8 turns out
+            #   valueFrom:                           # to be gated on Hugging Face -- check its model
+            #     secretKeyRef:                      # page first. Same secretKeyRef pattern as API_KEY.
+            #       name: hf-token-secret
+            #       key: token
+          resources:
+            limits:
+              cpu: 16
+              memory: 140Gi
+              nvidia.com/gpu: 1        # <<< FILL IN -- start at 1; bump to 2 (+ uncomment tensor-parallel-size
+                                       #     above) only if a single GPU doesn't have enough memory
+            requests:
+              nvidia.com/gpu: 1        # <<< keep in sync with the limits value above
+          volumeMounts:
+            - mountPath: /abyss/home
+              name: cephfs-home
+              readOnly: false
+            - mountPath: /data
+              name: data
+            - mountPath: /dev/shm
+              name: dshm
+          ports:
+            - containerPort: 8000
+      tolerations:
+        - key: "REPLACE_ME"            # <<< FILL IN -- copied the real values from Stephens
+          operator: "REPLACE_ME"       #     vllm pod's example
+          value: "REPLACE_ME"
+          effect: "REPLACE_ME"
+      nodeSelector:
+        kubernetes.io/hostname: "REPLACE_ME"   # <<< FILL IN, same source as tolerations above
+      imagePullSecrets:
+        - name: registry-ro-login      # matches Stephen's example -- namespace-wide, keep as-is
+      volumes:
+        - name: cephfs-home
+          hostPath:
+            path: "/cephfs/abyss/home/user-name"   # <<< FILL IN your actual username
+            type: Directory
+        - name: data
+          hostPath:
+            path: "/cephfs/abyss/home/user-name/huggingface"   # <<< FILL IN your actual username
+            type: DirectoryOrCreate
+        - name: dshm
+          emptyDir:
+            medium: Memory

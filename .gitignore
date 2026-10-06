@@ -1,0 +1,52 @@
+# ---------------------------------------------------------------------------
+# Publication repo: everything under data/ is ignored by default, and only
+# derived files that contain no caption text, no account identifiers and no
+# MCL links are whitelisted explicitly below. Raw MCL content is never tracked.
+# ---------------------------------------------------------------------------
+
+# Environments, caches, editor leftovers
+.venv/
+__pycache__/
+**/.ipynb_checkpoints/
+.claude/
+
+# Local deployment files (GPU pod)
+src/*.local.yaml
+
+# Raw data, model artifacts, third-party reference code
+data/raw/
+models/
+references/
+
+# Everything in data/processed and data/llm_scores is ignored ...
+data/processed/*
+data/llm_scores/*
+
+# ... except these derived outputs (aggregates and per-post scores WITHOUT text).
+# Note: *_aggregated.csv and llm_scores/*.csv carry MCL post IDs (text_id);
+# hash or drop that column before publishing if you want to be strict.
+!data/processed/crisis_window_regression_results.csv
+!data/processed/by_window_topic_summary.csv
+!data/processed/axis_a_dpm_de_aggregated.csv
+!data/processed/axis_b_dpm_subcategories_de_aggregated.csv
+!data/processed/axis_c_masterframe_de_aggregated.csv
+!data/processed/axis_d_arena_de_aggregated.csv
+!data/processed/fff_hashtag_counts.csv
+!data/processed/fff_hashtag_categories_long.csv
+!data/processed/all_hashtag_categories_long.csv
+!data/llm_scores/*.csv
+
+# Never whitelist these (listed for documentation; they are already covered by
+# the data/processed/* rule): raw text, mcl_url, post_owner.*, Representative_Docs,
+# per-post entities
+#   data/processed/FFF_german.csv
+#   data/processed/dpm_pilot_subsample.csv
+#   data/processed/overall_topics.csv
+#   data/processed/fff_topics_needing_review.csv
+#   data/processed/all_topics.csv
+#   data/processed/fff_topics.csv
+#   data/processed/fff_topic_naming_worksheet.csv
+#   data/processed/overall_entities.csv
+#   data/processed/window_*_entities.csv
+#   data/processed/fff_hashtag_topic_assignment.csv
+
