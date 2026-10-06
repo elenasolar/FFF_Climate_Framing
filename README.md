@@ -1,6 +1,6 @@
 # Extension without Amplification: How Fridays for Future Germany Reframed Climate Change on Instagram across Five Crises, 2018–2025
 
-*Course project for* Current Debates on Political Inequality *(Summer Semester 2026)*
+*Course project for 'Current Debates on Political Inequality' (Summer Semester 2026)*
 
 ## Overview
 
