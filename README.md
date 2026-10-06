@@ -12,3 +12,7 @@ The accompanying course paper is added as a pdf file in this reposiroty.
 
 ## Interactive Dashboard
 For exploratory analysis of the frame evolution in relation to crisis windows and key-events, an interactive dashboard was compiled. This can be found under: https://elenasolar.github.io/FFF_Climate_Framing/
+
+## Dependencies
+A python library, used to score the frames presence using the LLM instrument, is not part of this repository.
+We are currently working on publishing it a a open access library.  
