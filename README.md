@@ -15,4 +15,4 @@ For exploratory analysis of the frame evolution in relation to crisis windows an
 
 ## Dependencies
 A python library, used to score the frames presence using the LLM instrument, is not part of this repository.
-We are currently working on publishing it a a open access library.  
+We are currently working on publishing it as an open access library.  
